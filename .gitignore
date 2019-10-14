@@ -20,10 +20,10 @@
 /node_modules
 /yarn-error.log
 
-/config/credentials.yml
+/config/credentials.yml.enc
 /config/database.yml
 /config/storage.yml
-
+/test/*
 
 /public/assets
 /public/*
