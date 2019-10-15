@@ -7,5 +7,5 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 50 }
   validates :phone, presence: true, format: { with: /\A\d+\z/, message: "Only number"}, length: { in: 10..12 }
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
 end
