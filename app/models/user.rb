@@ -8,4 +8,8 @@ class User < ApplicationRecord
   validates :phone, presence: true, format: { with: /\A\d+\z/, message: "Only number"}, length: { in: 10..12 }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+
+  def name_user
+    self.name.titleize
+  end
 end
