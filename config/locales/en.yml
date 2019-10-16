@@ -1,7 +1,15 @@
 en:
+  name_restaurant: "Restaurant"
   message_phone: "Only number"
   static_pages:
     home:
       name_page: "Home"
     help:
       name_page: "Help"
+  header:
+    home: "Home"
+    menu: "Menu"
+    profile: "Profile"
+    booking: "Booking"
+  footer:
+    help: "Help"
