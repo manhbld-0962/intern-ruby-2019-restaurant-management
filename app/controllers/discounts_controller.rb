@@ -1,25 +1,47 @@
 class DiscountsController < ApplicationController
-  before_action :authenticate_member!
-  skip_before_action :set_up, [:new, :index]
+  before_action :authenticate_user!
+  before_action :set_up, only: [:show, :edit, :update, :destroy]
 
   def new
     @discount = Discount.new
   end
 
   def show
+  end
+
+  def index
     @discounts = Discount.all
   end
 
   def create
+    @discount = Discount.new(params_discount)
+    if @discount.save
+      flash[:success] = "Create discount complete"
+      redirect_to discounts_path
+    else
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
+    if @discount.update_attributes(params_discount)
+      flash[:success] = "Create discount complete"
+      redirect_to discounts_path
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @discount.destroy
+    respond_to do |format|
+      format.html { redirect_to discounts_path, notice: "Delete discount complete" }
+      format.json { head :no_contents}
+      format.js
+    end
   end
 
   private
@@ -29,7 +51,7 @@ class DiscountsController < ApplicationController
 
   def set_up
     @discount = Discount.find(params[:id])
-    return if @disount
+    return if @discount
     flash[:notice] = "Discount don't exists!"
     redirect_to discounts_path
   end

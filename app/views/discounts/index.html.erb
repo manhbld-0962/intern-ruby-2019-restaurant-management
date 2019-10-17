@@ -1,0 +1,9 @@
+<% provide(:title, t("discounts.index.name_page")) %>
+
+<h1><%= t("discounts.index.name_page") %></h1>
+
+<%= link_to t("discounts.index.button_create"), new_discount_path, class: "btn btn-outline-primary" %>
+
+<dl>
+  <%= render @discounts %>
+</dl>
