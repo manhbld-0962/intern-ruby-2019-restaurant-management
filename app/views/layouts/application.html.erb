@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Restaurant</title>
+    <title><%= t :name_restaurant %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,7 +12,11 @@
   <body>
     <%= render "layouts/header" %>
     <div class="container">
-      <%= render "static_pages/notice" %>
+      <div class="message">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %> message-content"><%= message %></div>
+        <% end %>
+      </div>
       <%= yield %>
       <%= render "layouts/footer" %>
     </div>

@@ -16,6 +16,8 @@ gem "devise"
 gem "config"
 gem "bootstrap-sass"
 gem "jquery-rails"
+gem "pagy"
+gem "font-awesome-rails"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"

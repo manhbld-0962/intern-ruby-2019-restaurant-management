@@ -1,5 +1,10 @@
 en:
   name_restaurant: "Restaurant"
+  buttons:
+    view: "View"
+    back: "Back"
+    edit: "Edit"
+    delete: "Delete"
 
   static_pages:
     home:
@@ -10,15 +15,33 @@ en:
   header:
     home: "Home"
     menu: "Menu"
+    discount: "Discounts"
     profile: "Profile"
     booking: "Booking"
 
   footer:
     help: "Help"
 
+  discounts:
+    new:
+      name_page: "Create Discount"
+      button_create: "Add"
+    index:
+      name_page: "List Discounts"
+      button_create: "Add Discount"
+    edit:
+      name_page: "Edit Discount"
+      button_save: "Save"
+
   messages:
     phone: "Only number"
     not_exists: "%{name} dont' exists!"
+    delete: "Are you sure?"
+    create_success: "Create %{name} Complete!"
+    update_success: "Update %{name} Complete!"
+    delete_success: "Delete %{name} Complete!"
+    delete_failed: "Delete Failed!"
+    error: "The form contains %{content}"
     
   activerecord:
     models:

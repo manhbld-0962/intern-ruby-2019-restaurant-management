@@ -2,6 +2,7 @@
 <h1><%= t("static_pages.home.name_page") %></h1>
 <% if user_signed_in? %>
   <%= current_user.name %>
+  <%= link_to t("header.discount"), discounts_path %>
   <%= link_to t("devise.shares.logout"), destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to t("devise.shares.signup"), sign_up_path %>

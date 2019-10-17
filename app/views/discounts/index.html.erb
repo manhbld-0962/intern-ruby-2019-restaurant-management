@@ -1,0 +1,30 @@
+<% provide :title, t("discounts.index.name_page") %>
+
+<div class="title-name">
+  <span class="content-name"><%= t "discounts.index.name_page" %></span>
+
+  <%= link_to new_discount_path, class: "btn button-add-discount" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    <span><%= t "discounts.index.button_create" %></span>
+  <% end %>
+</div>
+<br>
+<dl>
+  <dt class="row row-no-gutters first-row">
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "discounts.index.title_name_discount" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "discounts.index.title_discount" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "discounts.index.title_action" %></span>
+    </div>
+  </dt>
+  <%= render @discounts %>
+</dl>
+<div class="pagination-content">
+  <div class="parent-pagination">
+    <%= pagy_bootstrap_nav(@pagy).html_safe %>
+  </div>
+</div>
