@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+9.times do |discount|
+  name = FFaker::Code.ean
+  number = rand(10..25)
+  desc = "Giam gia den #{number}"
+  Discount.create!(name: name, discount_value: number, description: desc)
+end
