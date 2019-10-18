@@ -12,6 +12,7 @@ en:
     edit:
       name_page: "Edit Discount"
       button_save: "Save"
+
   tables:
     new:
       name_page: "Create Table"
@@ -19,3 +20,6 @@ en:
     index:
       name_page: "List Tables"
       button_create: "Add Table"
+    edit:
+      name_page: "Edit Table"
+      button_save: "Save"

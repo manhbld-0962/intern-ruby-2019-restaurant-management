@@ -28,7 +28,7 @@ class DiscountsController < ApplicationController
 
   def update
     if @discount.update_attributes(params_discount)
-      flash[:success] = "Create discount complete"
+      flash[:success] = "Update discount complete"
       redirect_to discounts_path
     else
       render :edit
@@ -37,11 +37,7 @@ class DiscountsController < ApplicationController
 
   def destroy
     @discount.destroy
-    respond_to do |format|
-      format.html { redirect_to discounts_path, notice: "Delete discount complete" }
-      format.json { head :no_contents}
-      format.js
-    end
+    respond_to :js
   end
 
   private

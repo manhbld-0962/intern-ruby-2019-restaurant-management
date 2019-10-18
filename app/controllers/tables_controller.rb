@@ -27,6 +27,12 @@ class TablesController < ApplicationController
   end
 
   def update
+    if @table.update_attributes(params_table)
+      flash[:success] = "Update table complete"
+      redirect_to tables_path
+    else
+      render :edit
+    end
   end
 
   def destroy

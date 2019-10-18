@@ -1,9 +1,9 @@
-<dt class="row">
+<dt class="row" id = "<%= "discount-#{discount.id}" %>" >
   <span>
     <%= link_to discount.name, discount, class: "col-8 left" %>
   </span>
   <span class="col-4 right">
     <%= link_to t(:button_edit), edit_discount_path(discount), class: "btn btn-outline" %>
-    <%= link_to t(:button_delete), discount, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline delete" %>
+    <%= link_to t(:button_delete), discount, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline" %>
   </span>
 </dt>
