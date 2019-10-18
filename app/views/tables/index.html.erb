@@ -1,0 +1,9 @@
+<% provide(:title, t("tables.index.name_page")) %>
+
+<h1><%= t("tables.index.name_page") %></h1>
+
+<%= link_to t("tables.index.button_create"), new_table_path, class: "btn btn-outline-primary" %>
+
+<dl>
+  <%= render @tables %>
+</dl>

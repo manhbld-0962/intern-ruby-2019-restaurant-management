@@ -1,0 +1,9 @@
+<dt class="row">
+  <span>
+    <%= link_to table.id, table, class: "col-8 left" %>
+  </span>
+  <span class="col-4 right">
+    <%= link_to t(:button_edit), edit_table_path(table), class: "btn btn-outline" %>
+    <%= link_to t(:button_delete), table, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline delete" %>
+  </span>
+</dt>

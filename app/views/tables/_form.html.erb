@@ -1,0 +1,15 @@
+<%= form_for(@table) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :type_table %>
+  <%= f.select :type_table, Table.type_tables.keys, { selected: @table.type_table }, class: "form-control" %>
+
+  <%= f.label :desc %>
+  <%= f.text_area :desc, class: "form-control" %>
+
+  <%= f.submit yield(:button_name), class: "btn btn-primary" %>
+<% end %>
+<br>
+<div>
+  <%= link_to t(:button_back), tables_path, class: "btn btn-primary btns" %>
+</div>
