@@ -23,7 +23,7 @@
       <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> <%= t("devise.registrations.edit_text_3") %>)</em>
+          <em>(<%= @minimum_password_length %> <%= t("devise.registrations.edit_text_3") %>)</em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
       </div>
