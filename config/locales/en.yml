@@ -23,3 +23,14 @@ en:
     edit:
       name_page: "Edit Table"
       button_save: "Save"
+
+  catalogs:
+    new:
+      name_page: "Create Catalog"
+      button_create: "Add"
+    index:
+      name_page: "List Catalogs"
+      button_create: "Add Catalog"
+    edit:
+      name_page: "Edit Catalog"
+      button_save: "Save"

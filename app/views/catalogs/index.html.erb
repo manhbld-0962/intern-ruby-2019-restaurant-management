@@ -1,0 +1,9 @@
+<% provide(:title, t("catalogs.index.name_page")) %>
+
+<h1><%= t("catalogs.index.name_page") %></h1>
+
+<%= link_to t("catalogs.index.button_create"), new_catalog_path, class: "btn btn-outline-primary" %>
+
+<dl>
+  <%= render @catalogs %>
+</dl>

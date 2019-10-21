@@ -4,6 +4,7 @@
 	<%= current_user.name %>
 	<%= link_to "List Discounts", discounts_path %>
 	<%= link_to "List Tables", tables_path %>
+	<%= link_to "List Catalogs", catalogs_path %>
 	<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 <% else %>
 <%= link_to "Log In", login_path %>
