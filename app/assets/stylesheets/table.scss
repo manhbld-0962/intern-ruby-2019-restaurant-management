@@ -1,0 +1,25 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.title-table-content {
+  text-align: center;
+  padding: 17px;
+}
+
+.row-select-table {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  grid-gap: 20px;
+}
+
+.title-table{
+  padding: 12px;
+  font-size: 150%;
+  font-style: italic;
+}
+
+.table-content {
+  padding: 20px 15px;
+  margin-bottom: 15px;
+}

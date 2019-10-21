@@ -11,6 +11,10 @@ admin.confirm
 admin.admin!
 admin.save
 
+member = User.new(name: "Test", phone: "1111111111", email: "test@gmail.com", password: "123123", password_confirmation: "123123")
+member.confirm
+member.save
+
 9.times do |discount|
   name = FFaker::Code.ean
   number = rand(10..25)

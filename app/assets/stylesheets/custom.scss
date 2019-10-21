@@ -190,9 +190,27 @@ input, textarea, select, .uneditable-input {
   color: $container-name;
 }
 
-.alert-notice {
+.alert-notice, .alert-alert {
   background-color: $notice-background;
   border-color: $notice-border;
   color: $notice;
   text-align: left;
+}
+
+.button-add-custom {
+  width: max-content;
+  padding: 5px 10px;
+  position: relative;
+  left: 70%;
+  top: -7px;
+  border: 1px solid $color-button-border;
+  border-radius: 5px 5px;
+  background-color: $color-button-background;
+  color: white;
+}
+
+.title-name {
+  padding: 0 70px;
+  margin-top: 20px;
+  border-bottom: 5px solid $container-name;
 }
