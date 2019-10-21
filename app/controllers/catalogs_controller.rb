@@ -36,6 +36,8 @@ class CatalogsController < ApplicationController
   end
 
   def destroy
+    @catalog.destroy
+    respond_to :js
   end
 
   private
