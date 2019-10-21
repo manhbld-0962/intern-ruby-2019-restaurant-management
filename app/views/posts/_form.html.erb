@@ -1,0 +1,18 @@
+<%= form_for(@post) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title, class: "form-control" %>
+
+  <%= f.label :content %>
+  <%= f.text_field :content, class: "form-control" %>
+
+  <%= f.label :desc %>
+  <%= f.text_area :desc, class: "form-control" %>
+
+  <%= f.submit yield(:button_name), class: "btn btn-primary" %>
+<% end %>
+<br>
+<div>
+  <%= link_to t(:button_back), posts_path, class: "btn btn-primary btns" %>
+</div>

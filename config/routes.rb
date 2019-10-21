@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   get "help", to: "static_pages#help"
   resources :discounts
   resources :tables
-  resources :catalogs
+  resources :catalogs do
+    resources :posts
+  end
   devise_for :users, controllers: {
     sessions: "users/sessions",
   	registrations: "users/registrations"
