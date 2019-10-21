@@ -1,0 +1,30 @@
+<div class="grid-item" id = "<%= "catalog-#{catalog.id}" %>" >
+  <div class="image-item">
+    <%= image_tag get_image(catalog), alt: "Anh dai dien #{catalog.name}" %>
+  </div>
+
+  <div class="btn-group button-edit-delete">
+    <%= link_to catalog, class: "btn btn-default title-catalog" do %>
+      <span><%= catalog.name %></span>
+    <% end %>
+    <% if check_admin_login? %>
+      <%= link_to "#", class: "btn btn-default dropdown-toggle show", data: {toggle: "dropdown"} do %>
+        <span class="fa fa-caret-down" title="Toggle dropdown"></span>
+      <% end %>
+      <ul class="dropdown-menu drop-select">
+        <li>
+          <%= link_to edit_catalog_path(catalog) do %>
+            <i class="fa fa-pencil fa-fw"></i>
+            <span><%= t "buttons.edit" %></span>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to catalog, method: :delete, data: { confirm: t("messages.delete") }, remote: true do %>
+            <i class="fa fa-trash-o fa-fw"></i>
+            <span><%= t "buttons.delete" %></span>
+          <% end %>
+        </li>
+      </ul>
+    <% end %>
+  </div>
+</div>

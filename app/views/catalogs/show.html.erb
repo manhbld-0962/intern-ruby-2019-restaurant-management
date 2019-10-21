@@ -1,0 +1,20 @@
+<% provide :title, t("catalogs.show.name_page") %>
+
+<div class="title-name title-catalog-index">
+  <span class="content-name"><%= @catalog.name %></span>
+</div>
+
+<dl>
+  <dt>
+    <div class="col-xs-6 col-md-4 title-catalog-name">
+      <span class="text-center"><%= t "catalogs.index.title_post" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-catlog-name">
+      <span class="text-center"><%= t "catalogs.index.title_author" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-catalog-name">
+      <span class="text-center"><%= t "catalogs.index.title_action" %></span>
+    </div>
+  </dt>
+  <%= render @posts %>
+</dl>

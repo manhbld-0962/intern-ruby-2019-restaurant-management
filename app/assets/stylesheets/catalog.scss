@@ -1,0 +1,78 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'color';
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  grid-gap: 10px;
+  margin-left: 40px;
+}
+
+.grid-item {
+  width: max-content;
+  height: max-content;
+  border: 1px solid black;
+  font-size: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.image-item > img{
+  width: 300px;
+  height: 300px;
+}
+
+.button-add-catalog {
+  width: max-content;
+  padding: 5px 10px;
+  position: relative;
+  left: 70%;
+  top: -7px;
+  border: 1px solid $color-button-border;
+  border-radius: 5px;
+  background-color: $color-button-background;
+  color: $color-white;
+}
+
+.button-add:hover {
+  border: 1px solid $color-button-border;
+  text-decoration-color: $color-white;
+  background-color: $color-white;
+  color: $color-button-border;
+}
+
+.button-edit-delete {
+  list-style-type: none;
+  width: 100%;
+  a {
+    border: none;
+  }
+}
+
+.title-catalog {
+  width: 80%;
+}
+
+.show {
+  width: 20%;
+}
+
+.grid-container-menu {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  grid-gap: 10px;
+  margin-left: 40px;
+}
+
+.item-menu {
+  font-size: 120%;
+}
+
+.title-catalog-name {
+  text-align: center;
+}
