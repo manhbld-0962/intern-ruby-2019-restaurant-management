@@ -19,3 +19,6 @@ models:
     description: 500
   tables:
     description: 500
+  catalogs:
+    description: 500
+    name: 50

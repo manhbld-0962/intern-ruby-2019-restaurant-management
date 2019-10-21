@@ -27,3 +27,9 @@ end
   desc = "Floor #{table/10}"
   Table.create!(type_table: type_table, description: desc)
 end
+
+6.times do |catalog|
+  name = "catalog #{catalog}"
+  desc = FFaker::Book.description[0..490]
+  Catalog.create!(name: name, description: desc)
+end
