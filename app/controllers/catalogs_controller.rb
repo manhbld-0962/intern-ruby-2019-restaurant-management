@@ -27,6 +27,12 @@ class CatalogsController < ApplicationController
   end
 
   def update
+    if @catalog.update_attributes(params_catalog)
+      flash[:success] = "Update catalog complete!"
+      redirect_to catalogs_path
+    else
+      render :edit
+    end
   end
 
   def destroy

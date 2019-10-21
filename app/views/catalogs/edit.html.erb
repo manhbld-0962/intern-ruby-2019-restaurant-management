@@ -1,2 +1,9 @@
-<h1>Catalogs#edit</h1>
-<p>Find me in app/views/catalogs/edit.html.erb</p>
+<% provide(:title, t("catalogs.edit.name_page")) %>
+<% provide(:button_name, t("catalogs.edit.button_save")) %>
+<h1><%= t("catalogs.index.name_page") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "form" %>
+  </div>
+</div>
