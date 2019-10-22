@@ -1,9 +1,9 @@
 <dt class="row" id = "<%= "post-#{post.id}" %>" >
   <span>
-    <%= link_to post.title, catalog_post_path(post.catalog.id, post.id), class: "col-8 left" %>
+    <%= link_to post.title, post, class: "col-8 left" %>
   </span>
   <span class="col-4 right">
-    <%= link_to t(:button_edit), edit_catalog_post_path(post.catalog.id, post.id), class: "btn btn-outline" %>
-    <%= link_to t(:button_delete), catalog_post_path(post.catalog.id, post.id), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline" %>
+    <%= link_to t(:button_edit), edit_post_path(post.id), class: "btn btn-outline" %>
+    <%= link_to t(:button_delete), post, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline" %>
   </span>
 </dt>

@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :discounts
   resources :tables
   resources :catalogs do
-    resources :posts
+    resources :posts, shallow: true
   end
   devise_for :users, controllers: {
     sessions: "users/sessions",

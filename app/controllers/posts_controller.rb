@@ -28,6 +28,12 @@ class PostsController < ApplicationController
   end
 
   def update
+    if @post.update_attributes(params_post_edit)
+      flash[:success] = "Update Post Complete!"
+      redirect_to catalog_path(@post.catalog.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -36,6 +42,10 @@ class PostsController < ApplicationController
   private
   def params_post
     params.require(:post).permit(:title, :content)
+  end
+
+  def params_post_edit
+    params.require(:post).permit(:catalog_id, :title, :content)
   end
 
   def set_up

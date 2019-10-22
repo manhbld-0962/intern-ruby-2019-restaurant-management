@@ -2,6 +2,8 @@
 <% provide(:button_name, t("catalogs.show.button_create")) %>
 <h1><%= t("catalogs.show.name_page") %></h1>
 
+<h3><%= @catalog.name %></h3>
+
 <%= link_to t("catalogs.show.button_create"), new_catalog_post_path(@catalog.id), class: "btn btn-outline-primary" %>
 
 <dl>

@@ -42,3 +42,6 @@ en:
     new:
       name_page: "Create Post"
       button_create: "Add"
+    edit:
+      name_page: "Edit Post"
+      button_save: "Save"
