@@ -46,9 +46,9 @@ class DiscountsController < ApplicationController
   end
 
   def set_up
-    @discount = Discount.find(params[:id])
+    @discount = Discount.find_by(id: params[:id])
     return if @discount
-    flash[:notice] = "Discount don't exists!"
+    flash[:warning] = "Discount don't exists!"
     redirect_to discounts_path
   end
 end

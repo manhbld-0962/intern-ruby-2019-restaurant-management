@@ -4,4 +4,5 @@ class Post < ApplicationRecord
 
   validates :title, presence: true, length: { maximum: 200 }, uniqueness: true
   validates :content, presence: true
+  validates :catalog_id, presence: true
 end

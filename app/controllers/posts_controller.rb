@@ -37,6 +37,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    @post.destroy
+    respond_to :js
   end
 
   private
@@ -49,9 +51,9 @@ class PostsController < ApplicationController
   end
 
   def set_up
-    @post = Post.find(params[:id])
+    @post = Post.find_by(id: params[:id])
     return if @post
-    flash[:notice] = "Post don't exsits!"
+    flash[:warning] = "Post don't exsits!"
     redirect_to catalog_posts_path
   end
 end

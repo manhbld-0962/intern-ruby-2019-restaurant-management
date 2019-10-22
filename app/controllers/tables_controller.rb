@@ -44,9 +44,9 @@ class TablesController < ApplicationController
   end
 
   def set_up
-    @table = Table.find(params[:id])
+    @table = Table.find_by(id: params[:id])
     return if @table
-    flash[:notice] = "Table don't exists!"
+    flash[:warning] = "Table don't exists!"
     redirect_to tables_path
   end
 end

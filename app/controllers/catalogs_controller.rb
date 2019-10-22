@@ -47,9 +47,9 @@ class CatalogsController < ApplicationController
   end
 
   def set_up
-    @catalog = Catalog.find(params[:id])
+    @catalog = Catalog.find_by(id: params[:id])
     return if @catalog
-    flash[:notice] = "Catalog don't exists!"
+    flash[:warning] = "Catalog don't exists!"
     redirect_to catalogs_path
   end
 end
