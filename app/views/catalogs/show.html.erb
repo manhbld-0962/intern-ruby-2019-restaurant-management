@@ -1,2 +1,9 @@
-<h1>Catalogs#show</h1>
-<p>Find me in app/views/catalogs/show.html.erb</p>
+<% provide(:title, t("catalogs.show.name_page")) %>
+<% provide(:button_name, t("catalogs.show.button_create")) %>
+<h1><%= t("catalogs.show.name_page") %></h1>
+
+<%= link_to t("catalogs.show.button_create"), new_catalog_post_path(@catalog.id), class: "btn btn-outline-primary" %>
+
+<dl>
+  <%= render @posts %>
+</dl>

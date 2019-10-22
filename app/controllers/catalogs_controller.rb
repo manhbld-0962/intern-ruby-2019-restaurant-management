@@ -7,6 +7,7 @@ class CatalogsController < ApplicationController
   end
 
   def show
+    @posts = Post.find_post(params[:id])
   end
 
   def index

@@ -34,3 +34,11 @@ en:
     edit:
       name_page: "Edit Catalog"
       button_save: "Save"
+    show:
+      name_page: "Show Catalog"
+      button_create: "Add Post"
+
+  posts:
+    new:
+      name_page: "Create Post"
+      button_create: "Add"
