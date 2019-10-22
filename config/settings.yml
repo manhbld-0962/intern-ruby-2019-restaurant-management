@@ -29,4 +29,4 @@ models:
     limit: [300, 200]
     type_image: "image/jpeg,image/gif,image/png"
   posts:
-    title: 5
+    title: 50
