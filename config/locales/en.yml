@@ -45,3 +45,14 @@ en:
     edit:
       name_page: "Edit Post"
       button_save: "Save"
+
+  foods:
+    new:
+      name_page: "Create Food"
+      button_create: "Add"
+    index:
+      name_page: "List Foods"
+      button_create: "Add Food"
+    edit:
+      name_page: "Edit Food"
+      button_save: "Save"

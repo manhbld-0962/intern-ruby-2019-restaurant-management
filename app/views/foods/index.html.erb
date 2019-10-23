@@ -1,0 +1,9 @@
+<% provide(:title, t("foods.index.name_page")) %>
+
+<h1><%= t("foods.index.name_page") %></h1>
+
+<%= link_to t("foods.index.button_create"), new_food_path, class: "btn btn-outline-primary" %>
+
+<dl>
+  <%= render @foods %>
+</dl>

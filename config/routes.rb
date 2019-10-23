@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get "help", to: "static_pages#help"
   resources :discounts
   resources :tables
+  resources :foods
   resources :catalogs do
     resources :posts, shallow: true
   end

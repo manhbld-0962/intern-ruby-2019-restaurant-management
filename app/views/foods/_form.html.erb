@@ -1,0 +1,24 @@
+<%= form_for(@food) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+
+  <%= f.label :desc %>
+  <%= f.text_area :desc, class: "form-control" %>
+
+  <%= f.label :status_food %>
+  <%= f.select :status_food, Food.status_foods.keys, { selected: @food.status_food }, class: "form-control" %>
+
+  <%= f.label :cost %>
+  <%= f.number_field :cost, min: 0, class: "form-control" %> 
+
+  <%= f.label :price %>
+  <%= f.number_field :price, min: 0, class: "form-control" %>
+
+  <%= f.submit yield(:button_name), class: "btn btn-primary" %>
+<% end %>
+<br>
+<div>
+  <%= link_to t(:button_back), foods_path, class: "btn btn-primary btns" %>
+</div>

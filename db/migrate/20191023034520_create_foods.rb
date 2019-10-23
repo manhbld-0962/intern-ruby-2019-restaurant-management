@@ -3,7 +3,7 @@ class CreateFoods < ActiveRecord::Migration[5.2]
     create_table :foods do |t|
       t.string :name, unique: true, null: false
       t.string :desc, null: false
-      t.integer :status, null: false
+      t.integer :status_food, null: false
       t.float :price, limit: 53, null: false
       t.float :cost, limit: 53, null: false
 
