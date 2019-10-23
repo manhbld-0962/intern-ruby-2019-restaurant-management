@@ -6,6 +6,10 @@ client:
 pages:
   page_number: 15
 
+static_pages:
+  limit_post: 8
+  limit_food: 8
+
 type_image:  ["jpg", "jpeg", "gif", "png"]
 
 models:
@@ -29,4 +33,6 @@ models:
     limit: [300, 200]
     type_image: "image/jpeg,image/gif,image/png"
   posts:
-    title: 5
+    title: 50
+  foods:
+    name: 100

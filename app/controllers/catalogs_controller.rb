@@ -1,22 +1,20 @@
 class CatalogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_catalog, except: %i(new index create)
+  before_action :load_catalog, except: %i(index new create)
+
+  def index
+    @catalogs = Catalog.get_catalog
+  end
 
   def new
     @catalog = Catalog.new
-  end
-
-  def show; end
-
-  def index
-    @catalogs = Catalog.select(:id, :name, :description, :image).order(:name)
   end
 
   def create
     @catalog = Catalog.new catalog_params
 
     if @catalog.save
-      flash[:success] = t("messages.create_success", name: @catalog.name.titleize)
+      flash[:success] = t("messages.create_success", name: @catalog.titleize_name)
       redirect_to catalogs_path
     else
       flash.now[:warning] = t "messages.create_failed"
@@ -24,11 +22,15 @@ class CatalogsController < ApplicationController
     end
   end
 
+  def show
+    @pagy, @posts = pagy(@catalog.posts, items: Settings.pages.page_number)
+  end
+
   def edit; end
 
   def update
     if @catalog.update_attributes catalog_params
-      flash[:success] = t("messages.update_success", name: @catalog.name.titleize)
+      flash[:success] = t("messages.update_success", name: @catalog.titleize_name)
       redirect_to catalogs_path
     else
       flash.now[:warning] = t "messages.update_failed"
@@ -39,7 +41,7 @@ class CatalogsController < ApplicationController
   def destroy
     @catalog.destroy
     if @catalog.destroyed?
-      flash[:success] = t("messages.delete_success", name: @catalog.name.titleize)
+      flash[:success] = t("messages.delete_success", name: @catalog.titleize_name)
     else
       flash[:warning] = t "messages.delete_failed"
     end

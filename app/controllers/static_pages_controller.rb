@@ -1,5 +1,8 @@
 class StaticPagesController < ApplicationController
-  def home; end
+  def home
+    @posts = Post.post_represent.limit(Settings.static_pages.limit_post)
+    @foods = Food.food_ready.limit(Settings.static_pages.limit_food)
+  end
 
   def help; end
 end
