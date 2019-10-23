@@ -27,6 +27,12 @@ class FoodsController < ApplicationController
   end
 
   def update
+    if @food.update_attributes(params_food)
+      flash[:success] = "Update Food Complete!"
+      redirect_to foods_path
+    else
+      render :edit
+    end
   end
 
   def destroy
