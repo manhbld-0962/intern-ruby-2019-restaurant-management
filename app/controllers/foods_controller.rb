@@ -36,6 +36,8 @@ class FoodsController < ApplicationController
   end
 
   def destroy
+    @food.destroy
+    respond_to :js
   end
 
   private
