@@ -1,0 +1,51 @@
+class MenusController < ApplicationController
+  before_action :authenticate_user!
+  before_action :set_up, only: [:show, :edit, :update, :destroy]
+
+  def new
+    @menu = Menu.new
+  end
+
+  def edit
+  end
+
+  def show
+  end
+
+  def index
+    # checkout date to search
+    if params[:date_at].nil? || params[:date_at].empty?
+      params[:date_at] = Time.now.to_date
+    end
+    @menus = Menu.find_date(params[:date_at])
+  end
+
+  def create
+    @food = Food.find(params[:menu][:food_id])
+    @menu = @food.menus.new(params_menu)
+    if @menu.save
+      flash[:sucess] = "Add Menu Complete!"
+      redirect_to menus_path
+    else
+      render :new
+    end
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
+  private
+  def params_menu
+    params.require(:menu).permit(:date_at)
+  end
+
+  def set_up
+    @menu = Menu.find_by(id: params[:id])
+    return if @menu
+    flash[:warning] = "Don't exsits!"
+    redirect_to menus_path
+  end
+end

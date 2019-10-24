@@ -1,0 +1,12 @@
+<% provide(:title, t("menus.index.name_page")) %>
+
+<h1><%= t("menus.index.name_page") %></h1>
+
+<div class="row">
+	<%= render "menus/search" %>
+	<%= link_to t("menus.index.button_create"), new_menu_path, class: "btn btn-outline-primary" %>
+</div>
+
+<dl>
+  <%= render @menus %>
+</dl>

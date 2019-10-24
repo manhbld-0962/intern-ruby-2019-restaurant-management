@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :discounts
   resources :tables
   resources :foods
+  resources :menus
   resources :catalogs do
     resources :posts, shallow: true
   end

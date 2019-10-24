@@ -1,4 +1,5 @@
 class Food < ApplicationRecord
+	has_many :menus, dependent: :destroy
 	enum status_food: [:yes, :no]
 
 	validates :name, presence: true, uniqueness: true, length: { maximum: 100 }

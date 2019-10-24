@@ -15,6 +15,7 @@ gem "bootsnap"
 gem "devise"
 gem "bootstrap-sass"
 gem "jquery-rails"
+gem "date_validator"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"

@@ -1,0 +1,8 @@
+<dt class="row" id = "<%= "menu-#{menu.id}" %>" >
+  <span><%= menu.food.name %></span> | 
+  <span><%= menu.date_at %></span>
+  <span class="col-4 right">
+    <%= link_to t(:button_edit), edit_menu_path(menu), class: "btn btn-outline" %>
+    <%= link_to t(:button_delete), menu, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline" %>
+  </span>
+</dt>
