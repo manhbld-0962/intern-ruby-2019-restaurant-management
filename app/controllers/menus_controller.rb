@@ -41,6 +41,8 @@ class MenusController < ApplicationController
   end
 
   def destroy
+    @menu.destroy
+    respond_to :js
   end
 
   private
