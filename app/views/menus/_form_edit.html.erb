@@ -1,0 +1,16 @@
+<%= form_for(@menu) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+
+  <%= f.label :food_id %>
+  <%= f.select :food_id, Food.all.collect{   |a| [a.name, a.id]}, { prompt: @menu.food.name }, class: "form-control" %>
+
+  <%= f.label :date_at %>
+  <%= f.date_field :date_at, min: Time.now, value: @menu.date_at, class: "form-control" %>
+
+  <%= f.submit yield(:button_name), class: "btn btn-primary" %>
+<% end %>
+<br>
+<div>
+  <%= link_to t(:button_back), menus_path, class: "btn btn-primary btns" %>
+</div>
+

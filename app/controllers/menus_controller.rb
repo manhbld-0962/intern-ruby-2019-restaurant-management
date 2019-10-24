@@ -22,9 +22,9 @@ class MenusController < ApplicationController
 
   def create
     @food = Food.find(params[:menu][:food_id])
-    @menu = @food.menus.new(params_menu)
+    @menu = @food.menus.build(params_menu)
     if @menu.save
-      flash[:sucess] = "Add Menu Complete!"
+      flash[:success] = "Add Menu Complete!"
       redirect_to menus_path
     else
       render :new
@@ -32,6 +32,12 @@ class MenusController < ApplicationController
   end
 
   def update
+    if @menu.update_attributes(params_menu_edit)
+      flash[:success] = "Update Menu Complete!"
+      redirect_to menus_path
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -40,6 +46,10 @@ class MenusController < ApplicationController
   private
   def params_menu
     params.require(:menu).permit(:date_at)
+  end
+
+  def params_menu_edit
+    params.require(:menu).permit(:date_at, :food_id)
   end
 
   def set_up

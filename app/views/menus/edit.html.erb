@@ -1,2 +1,9 @@
-<h1>Menus#edit</h1>
-<p>Find me in app/views/menus/edit.html.erb</p>
+<% provide(:title, t("foods.edit.name_page")) %>
+<% provide(:button_name, t("foods.edit.button_save")) %>
+<h1><%= t("foods.index.name_page") %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= render "menus/form_edit" %>
+  </div>
+</div>
