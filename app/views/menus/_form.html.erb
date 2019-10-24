@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form-create">
+    <%= form_for @menu do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <span class="title-create text-center"><%= yield :title %></span>
+
+      <%= f.label :food_id, class: "input-text" %>
+      <%= f.select :food_id, list_food.collect{|a| [a.name, a.id]}, { prompt: "Select Food"}, class: "input-form" %>
+
+      <%= f.label :date_at, class: "input-text" %>
+      <%= f.date_field :date_at, min: Time.now, value: Time.now.to_date, class: "input-form" %>
+
+      <%= f.submit yield(:button_name), class: "btn submit" %>
+      <br>
+      <div>
+      <%= link_to t("buttons.back"), menus_path, class: "btn submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

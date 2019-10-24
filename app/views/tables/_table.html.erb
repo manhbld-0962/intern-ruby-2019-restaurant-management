@@ -3,7 +3,7 @@
     <span class="text-center"><%= t("tables.show.name_table", number: table.id) %></span>
   </div>
   <div class="col-xs-6 col-md-4 title-table-content">
-    <span class="text-center"><%= table.description[0..50] %></span>
+    <span class="text-center"><%= table.description %></span>
   </div>
   <div class="col-xs-6 col-md-4 row-select-table">
     <%= link_to table, class: "btn btn-default" do %>

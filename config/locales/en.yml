@@ -5,6 +5,7 @@ en:
     back: "Back"
     edit: "Edit"
     delete: "Delete"
+    search: "Seach"
 
   static_pages:
     home:
@@ -96,6 +97,21 @@ en:
       name_page: "Edit Food"
       button_save: "Save"
 
+  menus:
+    date: "Menu at %{date}"
+    new:
+      name_page: "Create Menu"
+      button_create: "Add"
+    index:
+      name_page: "List Menus"
+      button_create: "Add Menu"
+      title_food: "Food Name"
+      title_day: "Created At"
+      title_action: "Action"
+    edit:
+      name_page: "Edit Menu"
+      button_save: "Save"
+
   messages:
     phone: "Only number"
     not_exists: "%{name} dont' exists!"
@@ -116,6 +132,7 @@ en:
       catalog: "Catalog"
       post: "Post"
       food: "Food"
+      menu: "Menu"
     attributes:
       user:
         name: "Name"
@@ -145,3 +162,6 @@ en:
         price: "Price"
         cost: "Cost"
         status_food: "Status"
+      menu:
+        date_at: "Date Created"
+        food_id: "Food Name"
