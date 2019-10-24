@@ -1,5 +1,9 @@
 module FoodsHelper
-  def get_list_status
+  def list_status_food
     Food.status_foods.keys
+  end
+
+  def list_food
+    Food.get_food
   end
 end

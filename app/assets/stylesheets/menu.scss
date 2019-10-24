@@ -1,0 +1,21 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+.button-add-menu {
+  margin: 5px;
+  .text-add {
+    padding: 6px 26px;
+  }
+}
+
+.form-search {
+  margin: 50px 20px;
+  padding-left: 50px;
+}
+
+.search-key {
+  padding: 6px 5px;
+  border-radius: 4px 4px;
+  border: 1px solid grey;
+  margin: 5px;
+}

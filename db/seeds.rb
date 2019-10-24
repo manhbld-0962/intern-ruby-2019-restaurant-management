@@ -63,3 +63,9 @@ end
   cost = rand(price..6000000)
   Food.create!(name: name, description: desc, price: price, cost: cost)
 end
+
+20.times do |menu|
+  food_id = rand(1..9)
+  date_at = Time.current.to_date + menu.days
+  Menu.create!(food_id: food_id, date_at: date_at)
+end

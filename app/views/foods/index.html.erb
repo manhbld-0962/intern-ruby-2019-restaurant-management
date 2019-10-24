@@ -1,6 +1,19 @@
 <% provide :title, t("foods.index.name_page") %>
 
 <div class="container">
+  <div class="section-common">
+    <div class="form-create">
+      <div class="title-name">
+        <span class="content-name"><%= t "foods.index.title_menu" %></span>
+      </div>
+      <div class="grid-container-menu">
+        <% @menus.each do |menu| %>
+          <span class="item-menu"><%= "- #{menu.food.name}" %></span>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <br>
   <div class="list-content">
     <% if check_admin_login? %>
       <div class="title-name">

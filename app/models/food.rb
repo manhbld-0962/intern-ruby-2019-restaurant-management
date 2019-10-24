@@ -1,12 +1,15 @@
 class Food < ApplicationRecord
   FOOD_PARAMS = %i(name description price cost status_food).freeze
-  enum status_food: [:no, :yes]
+  FOOD_LOAD_PARAMS = %i(id name description price cost).freeze
 
-  scope :food_ready, ->{where(status_food: :yes).limit(8)}
-  scope :get_food, ->{select(:id, :name, :description, :price, :cost).order(:name)}
+  has_many :menus, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.models.foods.name}
-  validates_presence_of :description, :price, :cost
+  validates :description, :price, :cost, presence: true
+
+  enum status_food: [:unavailable, :available]
+
+  scope :get_food, ->{select(FOOD_LOAD_PARAMS).order(:name)}
 
   def titleize_name
     self.name.titleize

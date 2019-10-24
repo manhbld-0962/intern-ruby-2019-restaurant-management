@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :discounts
     resources :tables
     resources :foods
+    resources :menus, except: :show
     resources :catalogs do
       resources :posts, except: :index, shallow: true
     end
