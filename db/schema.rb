@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_23_034520) do
+ActiveRecord::Schema.define(version: 2019_10_25_041755) do
+
+  create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "people"
+    t.datetime "book_at"
+    t.string "desc"
+    t.integer "checkout", default: 0
+    t.bigint "user_id"
+    t.bigint "table_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["book_at", "user_id", "table_id"], name: "time_booking_table", unique: true
+    t.index ["table_id"], name: "index_bookings_on_table_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
 
   create_table "catalogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -37,6 +51,15 @@ ActiveRecord::Schema.define(version: 2019_10_23_034520) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date_at"
+    t.bigint "food_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["date_at", "food_id"], name: "food_day_of", unique: true
+    t.index ["food_id"], name: "index_menus_on_food_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -51,6 +74,7 @@ ActiveRecord::Schema.define(version: 2019_10_23_034520) do
     t.string "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status_table", default: 0
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -78,5 +102,8 @@ ActiveRecord::Schema.define(version: 2019_10_23_034520) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "tables"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "menus", "foods"
   add_foreign_key "posts", "catalogs"
 end

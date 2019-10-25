@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  has_many :books
+  has_many :tables, through: :books
   enum role: [:member, :staff, :admin]
 
   validates :email, presence: true, uniqueness: true
