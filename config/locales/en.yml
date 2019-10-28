@@ -3,6 +3,9 @@ en:
   button_back: "Back"
   button_edit: "Edit"
   button_delete: "Delete"
+  massage_not_exsits: "Don't exsits!"
+  massage_success: "Add Complete!"
+  massage_edit: "Update Complete!"
   discounts:
     new:
       name_page: "Create Discount"
@@ -24,6 +27,9 @@ en:
     edit:
       name_page: "Edit Table"
       button_save: "Save"
+    show:
+      name_page: "Show Table"
+      button_create: "Booking Now"
 
   catalogs:
     new:
@@ -67,4 +73,15 @@ en:
       button_create: "Add Menu"
     edit:
       name_page: "Edit Menu"
+      button_save: "Save"
+
+  bookings:
+    new:
+      name_page: "Create Booking"
+      button_create: "Add"
+    index:
+      name_page: "List Bookings"
+      button_create: "Add Booking"
+    edit:
+      name_page: "Edit Booking"
       button_save: "Save"

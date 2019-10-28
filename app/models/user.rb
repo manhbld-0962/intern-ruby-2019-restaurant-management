@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :books
+  has_many :books, class_name: Booking.name, dependent: :destroy
   has_many :tables, through: :books
   enum role: [:member, :staff, :admin]
 

@@ -1,2 +1,8 @@
-<h1>Tables#show</h1>
-<p>Find me in app/views/tables/show.html.erb</p>
+<% provide(:title, t("tables.show.name_page")) %>
+<% provide(:button_name, t("tables.show.button_create")) %>
+<h1><%= t("tables.show.name_page") %></h1>
+
+<h3><%= @table.id %></h3>
+<h3><%= @table.desc %></h3>
+
+<%= link_to t("tables.show.button_create"), new_table_booking_path(@table.id), class: "btn btn-outline-primary" %>

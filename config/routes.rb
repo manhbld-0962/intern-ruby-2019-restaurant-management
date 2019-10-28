@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
   root to: "static_pages#home"
   get "help", to: "static_pages#help"
+  get "show_booking", to: "bookings#index"
   resources :discounts
-  resources :tables
+  resources :tables do
+    resources :bookings, shallow: true
+  end
   resources :foods
   resources :menus
   resources :catalogs do

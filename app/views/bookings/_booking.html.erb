@@ -1,0 +1,11 @@
+<dt class="row" id = "<%= "booking-#{booking.id}" %>" >
+  <span>
+    <span class="col-8 left"><%= booking.people %></span>
+    <span class="col-8 left"><%= booking.book_at %></span>
+    <span class="col-8 left"><%= booking.checkout %></span>
+  </span>
+  <span class="col-4 right">
+    <%= link_to t(:button_edit), edit_booking_path(booking.id), class: "btn btn-outline" %>
+    <%= link_to t(:button_delete), booking, method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: "btn btn-outline" %>
+  </span>
+</dt>
