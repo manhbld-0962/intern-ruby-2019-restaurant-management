@@ -10,7 +10,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :confirmable
 
-  scope :get_user_email, ->{select(:email).order(:email)}
+  scope :get_user_email, ->{select(:id, :email).order(:email)}
 
   enum role: [:member, :staff, :admin]
 
