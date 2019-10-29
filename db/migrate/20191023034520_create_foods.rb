@@ -6,7 +6,6 @@ class CreateFoods < ActiveRecord::Migration[5.2]
       t.integer :status_food, default: 0
       t.float :price, limit: 53
       t.float :cost, limit: 53
-
       t.timestamps
     end
   end

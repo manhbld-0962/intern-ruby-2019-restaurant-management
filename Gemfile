@@ -20,6 +20,8 @@ gem "carrierwave"
 gem "mini_magick"
 gem "file_validators"
 gem "date_validator"
+gem "momentjs-rails", ">= 2.9.0"
+gem "bootstrap3-datetimepicker-rails", "~> 4.14.30"
 
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"
