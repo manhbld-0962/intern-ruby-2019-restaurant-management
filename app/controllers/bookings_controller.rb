@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_up, only: [:show, :edit, :update, :destroy]
-  before_action :set_table, only: :create
+  before_action :set_up, only: [:show, :update, :destroy, :edit]
+  before_action :set_table, only: [:create, :new]
   before_action :check_table_status, only: :create
 
   def new
     @booking = Booking.new
+    @array_people = Booking.people.keys[0..Table.type_tables[@table.type_table]] 
   end
 
   def show
@@ -32,10 +33,26 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @booking.update_attributes(params_booking_update)
+      flash[:success] = t(:massage_edit)
+      redirect_to show_booking_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def params_booking
-    params.require(:booking).permit(:people, :book_at)
+    params.require(:booking).permit(:people, :book_at, :desc)
+  end
+
+  def params_booking_update
+    params.require(:booking).permit(:checkout)
   end
 
   def set_up
@@ -43,7 +60,7 @@ class BookingsController < ApplicationController
 
     return if @booking
     flash[:warning] = t(:massage_not_exsits)
-    redirect_to tables_path
+    redirect_to request.referrer
   end
 
   def set_table
