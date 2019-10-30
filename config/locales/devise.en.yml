@@ -3,6 +3,7 @@
 en:
   devise:
     confirmations:
+      new: "Resend confirmation instructions"
       confirmed: "Your email address has been successfully confirmed."
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
@@ -17,6 +18,15 @@ en:
       unauthenticated: "You need to sign in or sign up before continuing."
       unconfirmed: "You have to confirm your email address before continuing."
     mailer:
+      confirm: "Confirm my account"
+      confirm_text: "You can confirm your account email through the link below:"
+      info_password_change: "We're contacting you to notify you that your password has been changed."
+      email_change_text: "We're contacting you to notify you that your email is being changed to"
+      button_change_password: "Change my password"
+      change_password_text: "Someone has requested a link to change your password. You can do this through the link below."
+      unlock_text_1: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+      unlock_text_2: "Click the link below to unlock your account:"
+      button_unlock: "Unlock my account"
       confirmation_instructions:
         subject: "Confirmation instructions"
       reset_password_instructions:
@@ -31,12 +41,25 @@ en:
       failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
       success: "Successfully authenticated from %{kind} account."
     passwords:
+      name_page_reset_password: "Forgot your password?"
+      send_reset_password: "Send me reset password instructions"
+      change_password: "Change my password"
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes."
       updated: "Your password has been changed successfully. You are now signed in."
       updated_not_active: "Your password has been changed successfully."
     registrations:
+      back: "Back"
+      edit: "Edit"
+      unhappy: "Unhappy?"
+      button_cancel_account: "Cancel my account"
+      button_update: "Update"
+      button_sign_up: "Sign up"
+      edit_text_1: "Currently waiting confirmation for:"
+      edit_text_2: "(leave blank if you don't want to change it)"
+      edit_text_3: "characters minimum"
+      edit_text_4: "(we need your current password to confirm your changes)"
       destroyed: "Bye! Your account has been successfully cancelled. We hope to see you again soon."
       signed_up: "Welcome! You have signed up successfully."
       signed_up_but_inactive: "You have signed up successfully. However, we could not sign you in because your account is not yet activated."
@@ -46,6 +69,7 @@ en:
       updated: "Your account has been updated successfully."
       updated_but_not_signed_in: "Your account has been updated successfully, but since your password was changed, you need to sign in again"
     sessions:
+      button_login: "Log in"
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
       already_signed_out: "Signed out successfully."
@@ -53,6 +77,13 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+      resend: "Resend unlock instructions"
+    shares:
+      login: "Log in"
+      signup: "Sign up"
+      forgot: "Forgot your password?"
+      not_receive_confirm: "Didn't receive confirmation instructions?"
+      not_receive_unlock: "Didn't receive unlock instructions?"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"
