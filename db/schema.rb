@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_25_041755) do
+ActiveRecord::Schema.define(version: 2019_10_30_062010) do
 
   create_table "bookings", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "people"
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 2019_10_25_041755) do
     t.index ["food_id"], name: "index_menus_on_food_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "number"
+    t.bigint "food_id"
+    t.bigint "booking_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["booking_id", "food_id"], name: "food_of_book", unique: true
+    t.index ["booking_id"], name: "index_orders_on_booking_id"
+    t.index ["food_id"], name: "index_orders_on_food_id"
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -108,6 +119,8 @@ ActiveRecord::Schema.define(version: 2019_10_25_041755) do
   add_foreign_key "bookings", "tables"
   add_foreign_key "bookings", "users"
   add_foreign_key "menus", "foods"
+  add_foreign_key "orders", "bookings"
+  add_foreign_key "orders", "foods"
   add_foreign_key "posts", "catalogs"
   add_foreign_key "posts", "users"
 end

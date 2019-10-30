@@ -3,6 +3,7 @@ class Food < ApplicationRecord
   FOOD_LOAD_PARAMS = %i(id name description price cost).freeze
 
   has_many :menus, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.models.foods.name}
   validates :description, :price, :cost, presence: true

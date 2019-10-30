@@ -4,6 +4,7 @@ class Booking < ApplicationRecord
 
   belongs_to :user
   belongs_to :table
+  has_many :orders, dependent: :destroy
 
   validates :people, :checkout, :user_id, :table_id, presence: true
   validates :book_at, presence: true, date: {after_or_equal_to: Time.current}, on: :create
