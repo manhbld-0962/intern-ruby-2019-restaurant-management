@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form-create">
+    <%= form_for(@order, url: booking_orders_path(params[:booking_id]), method: :post ) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <span class="title-create text-center"><%= yield :title %></span>
+
+      <%= f.label :food_id, class: "text-input" %>
+      <%= f.select "food_id", list_food.collect{|a| [a.name, a.id]}, {prompt: "Select Food"}, class: "input-form" %>
+
+      <%= f.label :number, class: "text-input" %>
+      <%= f.number_field :number, value: Settings.models.orders.min, min: Settings.models.orders.min, max: Settings.models.orders.max, step: Settings.models.orders.step, class: "input-form" %>
+
+      <%= f.submit yield(:button_name), class: "btn submit" %>
+      <br>
+      <div>
+        <%= link_to t("buttons.back"), booking_orders_path(params[:booking_id]), class: "btn submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
