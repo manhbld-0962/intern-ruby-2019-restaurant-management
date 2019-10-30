@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form-create">
+    <%= form_for @order do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <span class="title-create text-center"><%= yield :title %></span>
+
+      <%= f.label :food_id,  class: "text-input" %>
+      <%= f.text_field :food_id, value: @order.food_name_titleize, class: "input-form", disabled: true %>
+
+      <%= f.label :number,  class: "text-input" %>
+      <%= f.number_field :number, value: @order.number, min: Setting.models.orders.min, max: Setting.models.orders.max, step: Setting.models.orders.step, class: "input-form" %>
+
+      <%= f.submit yield(:button_name), class: "btn submit" %>
+      <br>
+      <div>
+        <%= link_to t("buttons.back"), booking_orders_path(@order.booking.id), class: "btn submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>
