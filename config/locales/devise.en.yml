@@ -81,6 +81,7 @@ en:
     shares:
       login: "Log in"
       signup: "Sign up"
+      logout: "Log out"
       forgot: "Forgot your password?"
       not_receive_confirm: "Didn't receive confirmation instructions?"
       not_receive_unlock: "Didn't receive unlock instructions?"

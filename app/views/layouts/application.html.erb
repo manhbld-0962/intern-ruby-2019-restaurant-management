@@ -10,7 +10,9 @@
   </head>
 
   <body>
+    <%= render "layouts/header" %>
     <%= render "static_pages/notice" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>

@@ -6,4 +6,8 @@ class User < ApplicationRecord
   validates :phone, presence: true, format: { with: Settings.models.users.regex_phone, message: I18n.t(:message_phone)}, length: { minimum: Settings.models.users.min_length_phone, maximum: Settings.models.users.max_length_phone }
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
+
+  def name_user
+    self.name.titleize
+  end
 end
