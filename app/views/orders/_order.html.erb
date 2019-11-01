@@ -1,0 +1,16 @@
+<tr class="row" id = "<%= "order-#{order.id}" %>" >
+  <td><%= order.food_name_titleize %></td>
+  <td><%= order.number %></td>
+  <td>
+    <% if @booking.unpaid? %>
+      <%= link_to edit_order_path(order), class: "btn btn-default" do %>
+        <i class="fa fa-cog"></i>
+        <span><%= t "buttons.edit" %></span>
+      <% end %>
+      <%= link_to order, method: :delete, data: {confirm: t("messages.delete")}, remote: true, class: "btn btn-danger" do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+        <span><%= t "buttons.delete" %></span>
+      <% end %>
+    <% end %>
+  </td>
+</tr>
