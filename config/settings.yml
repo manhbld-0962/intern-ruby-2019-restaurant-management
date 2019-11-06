@@ -45,3 +45,5 @@ models:
     step: 1
   comments:
     content: 1000
+  tickets:
+    number: 10
