@@ -24,8 +24,10 @@
             </ul>
           </li>
         <% else %>
-          <%= link_to t("devise.shares.signup"), sign_up_path %>
-          <%= link_to t("devise.shares.login"), login_path %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to t("devise.shares.signup"), sign_up_path %></li>
+            <li><%= link_to t("devise.shares.login"), login_path %></li>
+          </ul>
         <% end %>
       </ul>      
     </div>
