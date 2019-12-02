@@ -1,15 +1,38 @@
 en:
   name_restaurant: "Restaurant"
-  message_phone: "Only number"
+
   static_pages:
     home:
       name_page: "Home"
     help:
       name_page: "Help"
+
   header:
     home: "Home"
     menu: "Menu"
     profile: "Profile"
     booking: "Booking"
+
   footer:
     help: "Help"
+
+  messages:
+    phone: "Only number"
+    not_exists: "%{name} dont' exists!"
+    
+  activerecord:
+    models:
+      user: "User"
+      discount: "Discount"
+    attributes:
+      user:
+        name: "Name:"
+        email: "Email:"
+        phone: "Phone:"
+        role: "Role:"
+        password: "Password:"
+        password_confirmation: "Password Confirmation:"
+      discount:
+        name: "Voucher Name:"
+        discount_value: "Quantity:"
+        description: "Description:"

@@ -3,9 +3,17 @@ enabled_locales: ["en"]
 client:
   host: "localhost:3000"
 
+pages:
+  page_number: 15
+
 models:  
   users:
     length_name: 100
     regex_phone: !ruby/regexp /\A\d+\z/
     min_length_phone: 10
     max_length_phone: 12
+  discounts:
+    name: 50
+    minimum: 5
+    maximum: 50
+    description: 500

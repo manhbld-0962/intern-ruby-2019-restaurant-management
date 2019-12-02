@@ -11,8 +11,10 @@
 
   <body>
     <%= render "layouts/header" %>
-    <%= render "static_pages/notice" %>
-    <%= yield %>
-    <%= render "layouts/footer" %>
+    <div class="container">
+      <%= render "static_pages/notice" %>
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
   </body>
 </html>

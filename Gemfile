@@ -20,6 +20,7 @@ gem "jquery-rails"
 group :development, :test do
   gem "mysql2", ">= 0.4.4", "< 0.6.0"
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
+  gem "ffaker"
 end
 
 group :development do
