@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="form-create">
+    <%= form_for(@discount) do |f| %>
+      <%= render "shared/error_messages", object: f.object %>
+
+      <span class="title-create text-center"><%= yield :title %></span>
+
+
+      <%= f.label :name, class: "text-input" %>
+      <%= f.text_field :name, class: "input-form" %>
+
+      <%= f.label :discount_value, class: "text-input" %>
+      <%= f.text_field :discount_value, class: "input-form" %>
+
+      <%= f.label :description, class: "text-input" %>
+      <%= f.text_area :description, class: "input-form" %>
+
+      <%= f.submit yield(:button_name), class: "btn submit" %>
+      <br>
+      <div>
+        <%= link_to t("buttons.back"), discounts_path, class: "btn submit" %>
+      </div>
+    <% end %>
+  </div>
+</div>

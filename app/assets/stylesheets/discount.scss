@@ -1,0 +1,22 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'color';
+
+.row-select-discount {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 10px;
+  grid-gap: 20px;
+}
+
+.button-add-discount {
+  width: max-content;
+  padding: 5px 10px;
+  position: relative;
+  left: 65%;
+  bottom: 7px;
+  border: 1px solid $button-add-border;
+  border-radius: 5px;
+  background-color: $button-add-background;
+  color: $color-white;
+}
