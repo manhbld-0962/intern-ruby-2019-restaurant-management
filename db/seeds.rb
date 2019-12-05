@@ -6,9 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+admin = User.new(name: "Admin", phone: "1111111111", email: "admin@gmail.com", password: "123123", password_confirmation: "123123")
+admin.confirm
+admin.admin!
+admin.save
+
 9.times do |discount|
   name = FFaker::Code.ean
   number = rand(10..25)
   desc = "Giam gia den #{number}"
   Discount.create!(name: name, discount_value: number, description: desc)
+end
+
+20.times do |table|
+  type_table = table % (Table.type_tables.length)
+  desc = "Floor #{table/10}"
+  Table.create!(type_table: type_table, description: desc)
 end
