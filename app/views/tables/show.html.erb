@@ -1,0 +1,9 @@
+<% provide :title, t("tables.show.name_page") %>
+<% provide :button_name, t("tables.show.button_create") %>
+
+<div class="title-name">
+  <span class="content-name"><%= t("tables.show.name_table", number: @table.id) %></span>
+</div>
+<div class="table-content">
+  <p><%= @table.description %></p>
+</div>

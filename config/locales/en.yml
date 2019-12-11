@@ -18,6 +18,7 @@ en:
     discount: "Discounts"
     profile: "Profile"
     booking: "Booking"
+    table: "Tables"
 
   footer:
     help: "Help"
@@ -29,9 +30,30 @@ en:
     index:
       name_page: "List Discounts"
       button_create: "Add Discount"
+      title_action: "Action"
+      title_discount: "Discount"
+      title_name_discount: "Name Discount"
     edit:
       name_page: "Edit Discount"
       button_save: "Save"
+
+  tables:
+    new:
+      name_page: "Create Table"
+      button_create: "Add"
+    index:
+      name_page: "List Tables"
+      button_create: "Add Table"
+      title_table: "Table"
+      title_action: "Action"
+      title_desc: "Description"
+    edit:
+      name_page: "Edit Table"
+      button_save: "Save"
+    show:
+      name_page: "Show Table"
+      name_table: "Table: %{number}"
+      button_create: "Booking Now"
 
   messages:
     phone: "Only number"
@@ -47,15 +69,19 @@ en:
     models:
       user: "User"
       discount: "Discount"
+      table: "Table"
     attributes:
       user:
-        name: "Name:"
-        email: "Email:"
-        phone: "Phone:"
-        role: "Role:"
-        password: "Password:"
-        password_confirmation: "Password Confirmation:"
+        name: "Name"
+        email: "Email"
+        phone: "Phone"
+        role: "Role"
+        password: "Password"
+        password_confirmation: "Password Confirmation"
       discount:
-        name: "Voucher Name:"
-        discount_value: "Quantity:"
-        description: "Description:"
+        name: "Voucher Name"
+        discount_value: "Quantity"
+        description: "Description"
+      table:
+        type_table: "People"
+        description: "Description"

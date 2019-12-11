@@ -7,6 +7,11 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def check_admin
+    return if current_user.admin?
+    redirect_to root_path
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
     locale = params[:locale].to_s.strip.to_sym

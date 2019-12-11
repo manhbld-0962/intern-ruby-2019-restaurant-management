@@ -1,5 +1,6 @@
 class DiscountsController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_admin
   before_action :load_discount, except: %i(new create index)
 
   def new
