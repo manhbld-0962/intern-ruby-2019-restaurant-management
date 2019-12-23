@@ -55,6 +55,25 @@ en:
       name_table: "Table: %{number}"
       button_create: "Booking Now"
 
+  catalogs:
+    new:
+      name_page: "Create Catalog"
+      button_create: "Add"
+    index:
+      name_page: "List Catalogs"
+      button_create: "Add Catalog"
+      button_upload: "Select File"
+      title_post: "Post"
+      title_author: "Author"
+      title_action: "Action"
+    edit:
+      name_page: "Edit Catalog"
+      button_save: "Save"
+      button_upload: "Select File"
+    show:
+      name_page: "Show Catalog"
+      button_create: "Add Post"
+
   messages:
     phone: "Only number"
     not_exists: "%{name} dont' exists!"
@@ -62,14 +81,17 @@ en:
     create_success: "Create %{name} Complete!"
     update_success: "Update %{name} Complete!"
     delete_success: "Delete %{name} Complete!"
+    create_failed: "Create Failed!"
+    update_failed: "Update Failed!"
     delete_failed: "Delete Failed!"
     error: "The form contains %{content}"
-    
+
   activerecord:
     models:
       user: "User"
       discount: "Discount"
       table: "Table"
+      catalog: "Catalog"
     attributes:
       user:
         name: "Name"
@@ -85,3 +107,7 @@ en:
       table:
         type_table: "People"
         description: "Description"
+      catalog:
+        name: "Catalog Name"
+        desc: "Description"
+        image: "Image"

@@ -2,12 +2,13 @@ Rails.application.routes.draw do
   scope "(:locale)", locale: /en/ do
     root to: "static_pages#home"
     get "/help", to: "static_pages#help"
-    resources :discounts
-    resources :tables
     devise_for :users, controllers: {
       sessions: "users/sessions",
       registrations: "users/registrations"
     }
+    resources :discounts
+    resources :tables
+    resources :catalogs
     devise_scope :user do
       get "sign_up", to: "users/registrations#new"
       post "sign_up", to: "users/registrations#create"

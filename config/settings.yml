@@ -6,7 +6,9 @@ client:
 pages:
   page_number: 15
 
-models:  
+type_image:  ["jpg", "jpeg", "gif", "png"]
+
+models:
   users:
     length_name: 100
     regex_phone: !ruby/regexp /\A\d+\z/
@@ -19,3 +21,12 @@ models:
     description: 500
   tables:
     description: 500
+  catalogs:
+    description: 500
+    name: 50
+  photos:
+    size: 20
+    limit: [300, 200]
+    type_image: "image/jpeg,image/gif,image/png"
+  posts:
+    title: 5
