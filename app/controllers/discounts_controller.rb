@@ -17,7 +17,7 @@ class DiscountsController < ApplicationController
   def edit; end
 
   def create
-    @discount = Discount.new params_discount
+    @discount = Discount.new discount_params
 
     if @discount.save
       flash[:success] = t("messages.create_success", name: @discount.name.titleize)
@@ -28,7 +28,7 @@ class DiscountsController < ApplicationController
   end
 
   def update
-    if @discount.update_attributes params_discount
+    if @discount.update_attributes discount_params
       flash[:success] = t("messages.update_success", name: @discount.name.titleize)
       redirect_to discounts_path
     else
@@ -48,7 +48,7 @@ class DiscountsController < ApplicationController
 
   private
 
-  def params_discount
+  def discount_params
     params.require(:discount).permit Discount::DISCOUNT_PARAMS
   end
 
