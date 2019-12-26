@@ -63,3 +63,9 @@ end
   cost = rand(price..6000000)
   Food.create!(name: name, description: desc, price: price, cost: cost)
 end
+
+10.times do |post|
+  title = "title #{post}"
+  content = FFaker::Book.description
+  Post.create!(title: title, content: content, user_id: admin.id, catalog_id: rand(1..6))
+end
