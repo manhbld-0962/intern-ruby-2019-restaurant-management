@@ -2,6 +2,8 @@ class Catalog < ApplicationRecord
   CATALOG_PARAMS = %i(name description image).freeze
   has_many :posts, dependent: :destroy
 
+  scope :get_catalog, ->{select(:id, :name, :description, :image).order(:name)}
+
   mount_uploader :image, ImageUploader
 
   validates :name, presence: true, length: {maximum: Settings.models.catalogs.name}, uniqueness: true

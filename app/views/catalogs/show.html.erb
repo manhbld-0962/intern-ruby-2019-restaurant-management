@@ -1,6 +1,6 @@
 <% provide :title, t("catalogs.show.name_page") %>
 
-<div class="title-name title-catalog-index">
+<div class="title-name">
   <span class="content-name"><%= @catalog.name %></span>
   <% if check_admin_login? %>
     <%= link_to new_catalog_post_path(@catalog.id), class: "btn button-add-post" do %>

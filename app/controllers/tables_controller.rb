@@ -1,20 +1,15 @@
 class TablesController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_admin, except: %i(show index)
+  before_action :check_admin, except: %i(index show)
   before_action :load_table, only: %i(show edit update destroy)
+
+  def index
+    @pagy, @tables = pagy(Table.get_table, items: Settings.pages.page_number)
+  end
 
   def new
     @table = Table.new
   end
-
-  def index
-    @pagy, @tables = pagy(Table.select(:id, :description, :type_table),
-      items: Settings.pages.page_number)
-  end
-
-  def show; end
-
-  def edit; end
 
   def create
     @table = Table.new table_params
@@ -23,15 +18,21 @@ class TablesController < ApplicationController
       flash[:success] = t("messages.create_success", name: @table.id)
       redirect_to tables_path
     else
+      flash.now[:warning] = t "messages.create_failed"
       render :new
     end
   end
+
+  def show; end
+
+  def edit; end
 
   def update
     if @table.update_attributes table_params
       flash[:success] = t("messages.update_success", name: @table.id)
       redirect_to tables_path
     else
+      flash.now[:warning] = t "messages.update_failed"
       render :edit
     end
   end
@@ -47,7 +48,6 @@ class TablesController < ApplicationController
   end
 
   private
-
   def table_params
     params.require(:table).permit Table::TABLE_PARAMS
   end

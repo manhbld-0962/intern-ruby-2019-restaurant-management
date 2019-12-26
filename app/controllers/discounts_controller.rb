@@ -1,37 +1,38 @@
 class DiscountsController < ApplicationController
   before_action :authenticate_user!
   before_action :check_admin
-  before_action :load_discount, except: %i(new create index)
+  before_action :load_discount, except: %i(index new create)
+
+  def index
+    @pagy, @discounts = pagy(Discount.get_discount, items: Settings.pages.page_number)
+  end
 
   def new
     @discount = Discount.new
   end
 
-  def show; end
-
-  def index
-    @pagy, @discounts = pagy(Discount.select(:id, :name, :discount_value).order(:discount_value),
-      items: Settings.pages.page_number)
-  end
-
-  def edit; end
-
   def create
     @discount = Discount.new discount_params
 
     if @discount.save
-      flash[:success] = t("messages.create_success", name: @discount.name.titleize)
+      flash[:success] = t("messages.create_success", name: @discount.titleize_name)
       redirect_to discounts_path
     else
+      flash.now[:warning] = t "messages.create_failed"
       render :new
     end
   end
 
+  def show; end
+
+  def edit; end
+
   def update
     if @discount.update_attributes discount_params
-      flash[:success] = t("messages.update_success", name: @discount.name.titleize)
+      flash[:success] = t("messages.update_success", name: @discount.titleize_name)
       redirect_to discounts_path
     else
+      flash.now[:warning] = t "messages.update_failed"
       render :edit
     end
   end
@@ -41,13 +42,12 @@ class DiscountsController < ApplicationController
     if @discount.destroyed?
       respond_to :js
     else
-      flash[:warning] = t("messages.delete_failed", name: @discount.name.titleize)
+      flash[:warning] = t("messages.delete_failed", name: @discount.titleize_name)
       redirect_to discounts_path
     end
   end
 
   private
-
   def discount_params
     params.require(:discount).permit Discount::DISCOUNT_PARAMS
   end

@@ -1,17 +1,13 @@
 class CatalogsController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_catalog, except: %i(new index create)
+  before_action :load_catalog, except: %i(index new create)
+
+  def index
+    @catalogs = Catalog.get_catalog
+  end
 
   def new
     @catalog = Catalog.new
-  end
-
-  def show
-    @pagy, @posts = pagy(@catalog.posts, items: Settings.pages.page_number)
-  end
-
-  def index
-    @catalogs = Catalog.select(:id, :name, :description, :image).order(:name)
   end
 
   def create
@@ -24,6 +20,10 @@ class CatalogsController < ApplicationController
       flash.now[:warning] = t "messages.create_failed"
       render :new
     end
+  end
+
+  def show
+    @pagy, @posts = pagy(@catalog.posts, items: Settings.pages.page_number)
   end
 
   def edit; end

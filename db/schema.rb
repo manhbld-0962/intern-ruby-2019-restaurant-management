@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_041310) do
+ActiveRecord::Schema.define(version: 2019_10_23_034520) do
 
   create_table "catalogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2019_10_21_041310) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "foods", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description"
+    t.integer "status_food", default: 0
+    t.float "price", limit: 53
+    t.float "cost", limit: 53
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.string "content"
@@ -37,14 +47,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_041310) do
     t.datetime "updated_at", null: false
     t.index ["catalog_id"], name: "index_posts_on_catalog_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "tables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "type_table", default: 0
-    t.string "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["catalog_id"], name: "index_posts_on_catalog_id"
   end
 
   create_table "tables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
