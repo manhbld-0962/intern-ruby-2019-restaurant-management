@@ -1,0 +1,28 @@
+<% provide :title, t("menus.index.name_page") %>
+
+<div class="title-name">
+  <span class="content-name"><%= t "menus.index.name_page" %></span>
+</div>
+
+<div class="row form-search">
+  <%= render "menus/search" %>
+  <%= link_to new_menu_path, class: "btn btn-default button-add-menu" do %>
+    <i class="fa fa-plus" aria-hidden="true"></i>
+    <span class="text-add"><%= t "menus.index.button_create" %></span>
+  <% end %>
+</div>
+
+<dl>
+  <dt class="row row-no-gutters first-row">
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "menus.index.title_food" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "menus.index.title_day" %></span>
+    </div>
+    <div class="col-xs-6 col-md-4 title-menu-name">
+      <span class="text-center"><%= t "menus.index.title_action" %></span>
+    </div>
+  </dt>
+  <%= render @menus %>
+</dl>

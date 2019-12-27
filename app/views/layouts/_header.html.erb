@@ -6,7 +6,7 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><%= link_to t("header.home"), root_path %></li>
-        <li><%= link_to t("header.menu"), "#"%></li>
+        <li><%= link_to t("header.menu"), menus_path %></li>
         <li><%= link_to t("header.discount"), discounts_path %></li>
         <li><%= link_to t("header.table"), tables_path %></li>
         <% if check_admin_login? %>

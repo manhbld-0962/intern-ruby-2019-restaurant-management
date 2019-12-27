@@ -11,7 +11,7 @@
     <%= f.text_area :description, class: "input-form" %>
 
     <%= f.label :status_food, class: "text-input" %>
-    <%= f.select :status_food, get_list_status, { selected: @food.status_food }, class: "input-form" %>
+    <%= f.select :status_food, list_status_food, {selected: @food.status_food}, class: "input-form" %>
 
     <%= f.label :cost, class: "text-input" %>
     <%= f.number_field :cost, min: 0, class: "input-form" %>

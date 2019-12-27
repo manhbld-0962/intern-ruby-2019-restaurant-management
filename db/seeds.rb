@@ -64,8 +64,8 @@ end
   Food.create!(name: name, description: desc, price: price, cost: cost)
 end
 
-10.times do |post|
-  title = "title #{post}"
-  content = FFaker::Book.description
-  Post.create!(title: title, content: content, user_id: admin.id, catalog_id: rand(1..6))
+20.times do |menu|
+  food_id = rand(1..9)
+  date_at = Time.current.to_date + menu.days
+  Menu.create!(food_id: food_id, date_at: date_at)
 end

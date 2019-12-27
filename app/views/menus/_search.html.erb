@@ -1,0 +1,13 @@
+<%= form_tag(menus_path, method: :get) do %>
+  <div class="form-row">
+    <div class="col-md-7" style="margin-left: 50px;" >
+      <%= date_field_tag :date_at, params[:date_at], class: "search-key" %>
+    </div>
+    <div class="col-md-2">
+      <%= button_tag(type: "submit", class: "btn btn-default submit") do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span><%= t "buttons.search" %></span>
+      <% end %>
+    </div>
+  </div>
+<% end %>

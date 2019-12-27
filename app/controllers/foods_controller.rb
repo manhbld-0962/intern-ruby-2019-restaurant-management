@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
 
   def index
     @pagy, @foods = pagy(Food.get_food, items: Settings.pages.page_number)
+    @menus = Menu.find_date Time.current.to_date
   end
 
   def new

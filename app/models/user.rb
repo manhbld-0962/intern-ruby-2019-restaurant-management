@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  enum role: [:member, :staff, :admin]
-
   has_many :posts, dependent: :destroy
 
   validates :email, presence: true, uniqueness: true
@@ -9,6 +7,8 @@ class User < ApplicationRecord
     length: {minimum: Settings.models.users.min_length_phone, maximum: Settings.models.users.max_length_phone}
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable, :confirmable
+
+  enum role: [:member, :staff, :admin]
 
   def titleize_name
     self.name.titleize
