@@ -11,6 +11,11 @@ class Food < ApplicationRecord
 
   scope :get_food, ->{select(FOOD_LOAD_PARAMS).order(:name)}
 
+  enum status_food: [:no, :yes]
+
+  scope :food_ready, ->{where(status_food: :yes)}
+  scope :get_food, ->{select(FOOD_LOAD_PARAMS).order(:name)}
+
   def titleize_name
     self.name.titleize
   end
