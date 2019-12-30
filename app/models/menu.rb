@@ -8,7 +8,7 @@ class Menu < ApplicationRecord
   validates :food_id, presence: true
   validates_uniqueness_of :date_at, scope: :food_id
 
-  scope :find_date, ->(date){where("date_at = ?",date)}
+  scope :find_date, ->(date){where("date_at = ?", date)}
 
   def get_date
     I18n.t("menus.date", date: self.date_at)

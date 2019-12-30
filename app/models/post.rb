@@ -6,8 +6,9 @@ class Post < ApplicationRecord
   belongs_to :user
 
   validates :title, presence: true, length: {maximum: Settings.models.posts.title}, uniqueness: true
-  validates :content, presence: true
-  validates :catalog_id, presence: true
+  validates :content, :catalog_id, presence: true
+
+  scope :post_represent, ->{select(POST_LOAD_PARAMS).order(:title)}
 
   scope :post_represent, ->{select(POST_LOAD_PARAMS).order(:title)}
 

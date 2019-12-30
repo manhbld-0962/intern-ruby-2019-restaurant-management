@@ -5,7 +5,11 @@ class Food < ApplicationRecord
   has_many :menus, dependent: :destroy
 
   validates :name, presence: true, uniqueness: true, length: {maximum: Settings.models.foods.name}
-  validates_presence_of :description, :price, :cost
+  validates :description, :price, :cost, presence: true
+
+  enum status_food: [:unavailable, :available]
+
+  scope :get_food, ->{select(FOOD_LOAD_PARAMS).order(:name)}
 
   enum status_food: [:no, :yes]
 
