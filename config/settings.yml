@@ -36,3 +36,6 @@ models:
     title: 50
   foods:
     name: 100
+  bookings:
+    max_hour: 23
+    min_hour: 7
