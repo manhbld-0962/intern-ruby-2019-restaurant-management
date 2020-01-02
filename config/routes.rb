@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     resources :discounts
     resources :foods
     resources :menus, except: :show
+    resources :booking, only: [] do
+      resources :orders, shallow: true
+    end
     resources :tables do
       resources :bookings, only: %i(index new create destroy), shallow: true
     end

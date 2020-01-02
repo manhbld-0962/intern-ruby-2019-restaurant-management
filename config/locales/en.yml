@@ -127,6 +127,22 @@ en:
       name_page: "Edit Booking"
       button_save: "Save"
 
+  orders:
+    new:
+      name_page: "Create Order"
+      button_create: "Create"
+    index:
+      name_page: "List Orders"
+      button_create: "Booking Food"
+      status: "Status: "
+      text_status: "Food booked:"
+      column_1: "Food Name"
+      column_2: "Number"
+      column_3: "Action"
+    edit:
+      name_page: "Edit Order"
+      button_save: "Save"
+
   messages:
     phone: "Only number"
     not_exists: "%{name} dont' exists!"
@@ -150,6 +166,7 @@ en:
       food: "Food"
       menu: "Menu"
       booking: "Booking"
+      order: "Order"
     attributes:
       user:
         name: "Name"
@@ -167,7 +184,7 @@ en:
         description: "Description"
       catalog:
         name: "Catalog Name"
-        desc: "Description"
+        description: "Description"
         image: "Image"
       post:
         title: "Title"
@@ -185,4 +202,8 @@ en:
       booking:
         people: "People"
         book_at: "Book a table at"
-        desc: "Description"
+        description: "Description"
+      order:
+        number: "Quantity"
+        food_id: "Food Name"
+        booking_id: "BookingID"
