@@ -24,6 +24,18 @@ class OrdersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if @order.update_attributes order_params
+      flash[:success] = t("messages.update_success", name: @order.food_name_titleize)
+      redirect_to booking_orders_path(@order.booking.id)
+    else
+      flash.now[:danger] = t "messages.update_failed"
+      render :edit
+    end
+  end
+
   private
   def load_order
     @order = Order.find_by id: params[:id]
