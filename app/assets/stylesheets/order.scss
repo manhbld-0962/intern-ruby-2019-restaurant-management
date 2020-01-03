@@ -1,0 +1,21 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+@import 'color';
+
+.status-booking {
+  border: 1px solid $color-booking-status-border;
+  color: $color-booking-status;
+  padding: 7px 20px;
+  border-radius: 5px;
+}
+
+.button-add-order {
+  width: max-content;
+  padding: 5px 10px;
+  position: relative;
+  left: 60%;
+  border: 1px solid $color-button-border;
+  border-radius: 5px;
+  background-color: $color-button-background;
+  color: $color-white;
+}

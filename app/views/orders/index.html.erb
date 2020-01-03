@@ -1,0 +1,41 @@
+<% provide :title, t("orders.index.name_page") %>
+
+<div class="title-name">
+  <span class="content-name"><%= t("orders.index.name_page") + ": #{@booking.user.titleize_name}" %></span>
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <span class="text-center"><%= t(".text_status") %>
+      <span class="status-booking"><%= @booking.checkout.upcase %></span>
+      <% if @booking.unpaid? && current_user.admin? %>
+        <%= link_to new_booking_order_path(params[:booking_id]), class: "btn button-add-order" do %>
+          <i class="fa fa-plus" aria-hidden="true"></i>
+          <span><%= t "orders.index.button_create" %></span>
+        <% end %>
+      <% end %>
+    </span>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th><%= t "orders.index.column_1" %></th>
+        <th><%= t "orders.index.column_2" %></th>
+        <th><%= t "orders.index.column_3" %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render @orders %>
+    </tbody>
+  </table>
+  <div class="pagination-content">
+    <div class="parent-pagination">
+      <%= pagy_bootstrap_nav(@pagy).html_safe %>
+    </div>
+  </div>
+</div>
+<div>
+  <%= link_to show_booking_path do %>
+    <span class="pull-right btn btn-primay"><%= t "buttons.back" %></span>
+  <% end %>
+</div>
