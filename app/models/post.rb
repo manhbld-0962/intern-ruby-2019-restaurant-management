@@ -10,6 +10,8 @@ class Post < ApplicationRecord
 
   scope :post_represent, ->{select(POST_LOAD_PARAMS).order(:title)}
 
+  scope :post_represent, ->{select(POST_LOAD_PARAMS).order(:title)}
+
   def titleize_title
     self.title.titleize
   end
